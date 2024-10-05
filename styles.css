@@ -1,0 +1,784 @@
+/* Basic Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    overflow-x: hidden; /* Prevents horizontal scroll */
+}
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+    background-color: black;
+}
+
+.navbar .logo {
+    padding-left: 90px; /* Adjust this value as needed to move the logo right */
+    
+}
+
+.navbar .logo img {
+    width: 210px; /* Increase this value to make the logo larger */
+    height: 65px; /* Maintain aspect ratio */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links li {
+    margin-left: 20px;
+    list-style-type: none;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.nav-links a:hover {
+    color: #ff6600;
+}
+
+.login-btn {
+    background-color: #ff6600;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+}
+
+/* Hero Section */
+/* Hero Section with Parallax and Background Zoom Animation */
+.hero {
+    height: 600px;
+    background: url('images/hero-image.webp') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed; /* Parallax Effect */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    margin: 0 auto;
+    animation: zoomBackground 15s ease-in-out infinite; /* Adding zoom animation */
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+    z-index: 1;
+}
+
+/* Background Zoom Animation */
+@keyframes zoomBackground {
+    0% {
+        background-size: 100%; /* Initial size */
+    }
+    50% {
+        background-size: 110%; /* Zoomed in */
+    }
+    100% {
+        background-size: 100%; /* Back to initial size */
+    }
+}
+
+/* Hero Content */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: slideUpFade 1.5s ease-out forwards;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    margin: 0;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    color: #ffcc00;
+    margin-top: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* Slide Up and Fade In Animation for Hero Content */
+@keyframes slideUpFade {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Staggered animation for multiple elements inside .hero-content */
+.hero-content h1 {
+    opacity: 0;
+    animation: fadeInStagger 1s ease-out 0.5s forwards;
+}
+
+.hero-content p {
+    opacity: 0;
+    animation: fadeInStagger 1s ease-out 0.8s forwards;
+}
+
+@keyframes fadeInStagger {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+/* Motivate Section */
+/* Motivate and Elevate Section */
+.motivate-section {
+    background-color: #1b1b1b; /* Dark background */
+    color: white;
+    text-align: center;
+    padding: 50px;
+    border-radius: 30px; /* Rounded corners */
+    width: 80%;
+    margin: 50px auto;
+    position: relative;
+    opacity: 0;
+    transform: scale(0.95); /* Initial scale-down effect */
+    animation: fadeInScale 1.5s ease-out forwards;
+}
+
+/* Fade-in and scale-up animation for the entire section */
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Heading Staggered Fade-up Animation */
+.motivate-section h2 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+    letter-spacing: 2px;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 1s ease-out forwards;
+    animation-delay: 0.2s; /* Slight delay */
+}
+
+.motivate-section h2 span {
+    color: #ff6600; /* Orange color for certain words */
+}
+
+/* Paragraph Animation */
+.motivate-section p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin: 20px auto;
+    width: 80%;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 1.2s ease-out forwards;
+    animation-delay: 0.4s; /* Delayed slightly after the title */
+}
+
+/* Bounce Button Animation */
+/* Motivate and Elevate Section Button */
+.motivate-section .btn {
+    background-color: #ff6600;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    margin-top: 20px;
+    display: inline-block;
+    z-index: 10;
+    position: relative;
+    opacity: 1; /* Ensure the button starts visible */
+    visibility: visible; /* Ensure visibility */
+    animation: fadeInBounce 1.5s ease-out forwards;
+    animation-delay: 0.6s;
+}
+
+/* Bounce and fade-in animation for the button */
+@keyframes fadeInBounce {
+    0% {
+        opacity: 0;
+        visibility: visible;
+        transform: translateY(50px);
+    }
+    60% {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+}
+
+
+/* Icon Bounce Animation */
+.motivate-section .icon {
+    position: absolute;
+    width: 120px;
+    animation: iconBounce 2s ease-in-out infinite; /* Continuous bounce */
+}
+
+@keyframes iconBounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px); /* Bouncing effect */
+    }
+}
+
+/* Individual icon positions */
+.icon-1 {
+    top: -10px;
+    left: 20px;
+}
+
+.icon-2 {
+    top: -80px;
+    right: 20px;
+}
+
+.icon-3 {
+    bottom: -30px;
+    left: -100px;
+}
+
+.icon-4 {
+    bottom: -50px;
+    right: -100px;
+}
+
+
+/* Black Section behind the background image */
+.programs-wrapper {
+    background-color: #000000; /* Black background section */
+    padding: 50px 0; /* Adjust the padding as necessary */
+    text-align: center;
+    position: relative;
+}
+
+/* Programs Section with Background Image */
+.programs {
+    background: url('images/programs-bg.png') no-repeat center center;
+    background-size: contain; /* Ensure the image fits properly */
+    width: 100%;
+    height: 550px; /* Adjust height to fit the image */
+    margin: 0 auto;
+    position: relative;
+    border-radius: 80px;
+}
+
+/* More Information Button Positioned Over Image */
+.more-info-btn {
+    background-color: #ff6600;
+    padding: 12px 50px;
+    color: white;
+    border-radius: 20px;
+    text-decoration: none;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 103px; /* Adjust based on the image alignment */
+    font-size: 1rem;
+    z-index: 5; /* Ensure it stays on top of the background */
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* Hover effect for the button */
+.more-info-btn:hover {
+    background-color: #e65c00;
+}
+
+.success-rate-section {
+    text-align: center;
+    background-color: #ffffff;
+    padding: 40px 20px;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeUp 1s ease-out forwards;
+  }
+  
+  .success-title {
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: #000000;
+    margin-bottom: 20px;
+  }
+  
+  .success-title span {
+    color: #ff6600; /* Orange color */
+  }
+  
+  .success-metrics {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 20px;
+  }
+  
+  .metric-box {
+    background-color: #f6f6f6;
+    padding: 30px;
+    border-radius: 10px;
+    width: 220px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeUp 1.2s ease-out forwards;
+    animation-delay: 0.2s; /* Adds delay for staggered animation */
+  }
+  
+  .metric-box h3 {
+    font-size: 3rem;
+    color: #ff6600; /* Orange color */
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  
+  .metric-box p {
+    font-size: 1.2rem;
+    color: #002244;
+    margin-bottom: 0;
+    font-weight: 500;
+  }
+  
+  .igcse-details {
+    margin-top: 20px;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeUp 1.5s ease-out forwards;
+    animation-delay: 0.5s;
+  }
+  
+  .igcse-details p {
+    color: #002244;
+    font-weight: 700;
+    font-size: 1.2rem;
+  }
+  
+  .cta-button a {
+    display: inline-block;
+    background-color: #000000;
+    color: #ffcc00; /* Yellow text */
+    padding: 15px 35px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeUp 1.5s ease-out forwards;
+    animation-delay: 0.7s;
+  }
+  
+  .cta-button a:hover {
+    background-color: #ff6600; /* Change background on hover */
+    color: #ffffff;
+  }
+  
+  /* Animation Keyframes */
+  @keyframes fadeUp {
+    0% {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  /* Basic Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+    background-color: black;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.navbar .logo img {
+    width: 120px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+.nav-links li {
+    margin-left: 10px;
+    position: relative;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 8px 10px; /* Adds padding inside the links */
+    display: inline-block; /* Ensures padding applies properly */
+}
+
+.nav-links a:hover {
+    color: #ff6600;
+}
+
+.login-btn {
+    background-color: #ff6600;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+}
+
+/* Dropdown Styling */
+/* Dropdown Styling */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: rgb(103, 98, 98);
+    top: 100%;
+    left: 0;
+    padding: 10px 0;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Darker shadow for more depth */
+    border-radius: 12px; /* More rounded corners */
+    width: 220px; /* Slightly wider */
+    z-index: 1000;
+    border: 1px solid #e6e6e6; /* Soft border */
+}
+
+.dropdown-menu li {
+    margin: 0;
+    padding: 0;
+}
+
+.dropdown-menu a {
+    color: #333;
+    padding: 15px 20px; /* Add more padding inside each dropdown link */
+    display: block;
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smoother transitions */
+    border-bottom: 1px solid #f0f0f0; /* Light divider between items */
+}
+
+.dropdown-menu a:last-child {
+    border-bottom: none; /* Remove border from the last item */
+}
+
+.dropdown-menu a:hover {
+    background-color: #727171; /* Light grey hover effect */
+    color: #ff6600; /* Accent color on hover */
+    padding-left: 25px; /* Slight indent when hovering */
+    transition: padding-left 0.3s ease; /* Smooth indentation */
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Dropdown Animation */
+.dropdown-menu {
+    opacity: 0;
+    transform: translateY(10px); /* Start a bit lower */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    transform: translateY(0); /* Smoothly moves into position */
+}
+
+/* Better hover effect for dropdown trigger */
+.nav-links li:hover > a {
+    color: #ff6600;
+}
+
+/* Additional Hover Styling for Main Links */
+.nav-links li > a {
+    padding: 10px 20px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.nav-links li > a:hover {
+    background-color: rgba(255, 102, 0, 0.1); /* Light orange background on hover */
+    border-radius: 5px; /* Adds a slight rounded effect on hover */
+}
+
+
+/* Footer */
+.footer {
+    background-color: #000;
+    color: #fff;
+    padding: 40px 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+.menu-section, .contact-section, .address-section {
+    width: 30%;
+    padding: 0 0px;
+}
+
+.footer ul {
+    list-style: none; /* Removes bullets from footer ul specifically */
+    padding-left: 0;  /* Removes any left padding */
+    margin-left: 0;   /* Removes any left margin */
+}
+
+.footer a {
+    color: #bbb;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+li {
+    margin-bottom: 5px; /* Adds spacing between list items */
+}
+
+.footer a:hover {
+    color: #ff6600;
+}
+.menu-section ul {
+    list-style: none; /* Removes the bullet points */
+    padding-left: 0;  /* Removes any left padding */
+    margin-left: 0;   /* Removes any left margin */
+}
+
+.menu-section li {
+    margin-bottom: 5px; /* Reduces the space between list items */
+}
+
+.menu-section a {
+    font-size: 1rem; /* Adjust the font size */
+    line-height: 1.4; /* Adjust the line height to control the vertical spacing */
+    text-decoration: none;
+    color: #bbb; /* Adjust color if needed */
+}
+
+.menu-section a:hover {
+    color: #ff6600; /* Hover color effect */
+}
+
+
+.menu-section h3, .contact-section h3, .address-section h3 {
+    font-size: 1.5rem;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+/* Make the following headings orange */
+.address-section h3 {
+    font-size: 1.3rem;
+    color: #ff6600; /* Orange color for the headings */
+    margin-bottom: 10px;
+}
+
+/* Specific paragraphs under the headings */
+.address-section p strong {
+    color: #ff6600; /* Orange color for strong text like phone */
+}
+
+/* QR Codes section styling */
+.qr-codes {
+    display: flex;
+    gap: 15px;
+}
+
+.qr-codes div {
+    text-align: center;
+}
+
+.qr-codes img {
+    width: 100px;
+    height: 100px;
+}
+
+.address-section p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.newsletter-section {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.newsletter-section h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.newsletter-section form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.newsletter-section input {
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    width: 250px;
+}
+
+.newsletter-section button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #ff6600;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+
+.newsletter-section button:hover {
+    background-color: #e65c00;
+}
+
+/* Chat icon hover effect */
+#chatIcon img {
+    transition: transform 0.3s ease;
+}
+
+#chatIcon img:hover {
+    transform: scale(1.1);
+}
+
+/* Chat box animation */
+#chatBox {
+    animation: fadeInUp 0.5s ease both;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* About Us Page Scoped Styling */
+.about-page .about-us {
+    background-color: #111; /* Dark background */
+    color: #f1f1f1;
+    padding: 20px 20px;
+}
+
+.about-page .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.about-page .section-title {
+    text-align: center;
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #f1f1f1;
+    margin-bottom: 30px;
+}
+
+.about-page .section-title .highlight {
+    color: #ff6600; /* Orange */
+}
+
+.about-page .intro-text {
+    text-align: center;
+    font-size: 1.5rem;
+    line-height: 1.8;
+    margin-bottom: 50px;
+    color: #ccc;
+}
+
+.about-page .milestones {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.about-page .milestone-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ff6600;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.about-page .milestone-title .highlight {
+    color: #ff6600;
+}
+
+.about-page ul {
+    list-style-type: disc;
+    margin-left: 30px;
+}
+
+.about-page ul li {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #ddd;
+}
+.about-page .footer ul {
+    list-style: none !important; /* Ensure footer ul does not get bullets */
+}
+
