@@ -26,9 +26,18 @@
                     <li><a href="achievement.html">Individual Student Achievements</a></li>
                 </ul>
             </li>
-            <li><a href="#">Programs</a></li>
-            <li><a href="#">FAQ</a></li>
-            <li><a href="#">Enquire Now</a></li>
+            <li class="dropdown">
+                <a href="#">Programs</a>
+                <ul class="dropdown-menu">
+                    <li><a href="fun-class.html">Programs for Kids: Fun Class</a></li>
+                    <li><a href="reading-class.html">Phonics Class: The World of Reading</a></li>
+                    <li><a href="reading-exploration.html">Primary Programs: Reading Exploration</a></li>
+                    <li><a href="kaizena-english.html">Primary Programs: Kaizena English</a></li>
+                    <li><a href="secondary-highschool-programs.html">Secondary and High School Programs</a></li>
+                </ul>
+            </li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="enquire.html">Enquire Now</a></li>
             <li><a href="#" class="login-btn">Log In</a></li>
         </ul>
     </nav>
@@ -78,9 +87,9 @@
                 <h3>Menu</h3>
                 <ul>
                     <li><a href="history.html">About Us</a></li>
-                    <li><a href="#programs">Programs</a></li>
-                    <li><a href="#enquire">Enquire Now</a></li>
-                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="fun-class.html">Programs</a></li>
+                    <li><a href="enquire.html">Enquire Now</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
                 </ul>
             </div>
             <div class="contact-section">
@@ -113,11 +122,14 @@
         </div>
         <div class="newsletter-section">
             <h3>Be a part of Vision Mentors!</h3>
-            <form action="#">
+            <form id="newsletterForm" action="https://formspree.io/f/mgvewpvy" method="POST">
                 <label for="email">Email Address *</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
                 <button type="submit">Submit</button>
             </form>
+            <div id="successMessage" style="display: none;">
+                <p>Thank you! Your subscription has been submitted successfully.</p>
+            </div>
         </div>
     </footer>
 
@@ -191,6 +203,7 @@
 
     <!-- Chat JS Script -->
     <script src="chat.js"></script>
+    <script src="newsletter.js"></script>
 
 </body>
 </html>

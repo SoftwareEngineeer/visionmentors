@@ -1,18 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Individual Student Achievements</title>
+    <title>Fun Class | Vision Mentors</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="icon" href="images/favicon.png" type="image/x-icon">
 </head>
+<body class="enquiry-body">
 
-<body class="achievements-page">
-
-    <!-- Navbar -->
+    <!-- Navbar (Same as history.html) -->
     <nav class="navbar">
         <div class="logo">
             <a href="index.html">
@@ -44,24 +42,60 @@
         </ul>
     </nav>
 
-    <!-- Student Achievements Section -->
-    <section class="student-achievements" data-aos="fade-in">
-        <div class="container">
-            <h1 class="section-title" data-aos="zoom-in">Individual <span class="highlight">Student Achievements</span></h1>
-            <p class="intro-text" data-aos="fade-up" data-aos-delay="200">Our academy takes immense pride in the remarkable achievements of our students, demonstrating their dedication to academic excellence and personal growth:</p>
+    <!-- Enquire Section -->
+    <section id="enquiry-section">
+        <div class="enquiry-text">
+            <h1>ENQUIRE NOW</h1>
+            <p>
+                Join the mentorship program that has guided thousands of school students in Vietnam, Korea, Japan, China, 
+                Hong Kong, Singapore, America, Canada, etc., to success by following the Vision Mentors roadmap. Don't miss out!
+            </p>
+        </div>
 
-            <ul class="achievement-list">
-                <li data-aos="fade-right" data-aos-delay="300"><strong>David Hoang:</strong> David's journey began in January 2023, excelling in essay writing and achieving a 1950 SSAT score, an IELTS score of 7.5, and a 3rd place win in the Spelling Bee competition.</li>
-                <li data-aos="fade-right" data-aos-delay="400"><strong>Phuong Y:</strong> Phuong scored an impressive SAT score of 1540 out of 1600, exemplifying academic excellence.</li>
-                <li data-aos="fade-right" data-aos-delay="500"><strong>Nhu:</strong> Another top achiever, Nhu scored 1570 out of 1600 on the SAT, a testament to rigorous test preparation and guidance from Vision Mentors.</li>
-                <li data-aos="fade-right" data-aos-delay="600"><strong>Minh Giap:</strong> Minh improved from a 104 to a 110 standardized test score with Vision Mentors' support, representing our commitment to helping students overcome challenges.</li>
-            </ul>
+        
+        <div class="enquiry-form-container">
+            <h2>Application Form</h2>
+            <form id="enquiryForm">
+                <label for="first-name">First name</label>
+                <input type="text" id="first-name" name="first-name" required>
 
-            <p class="closing-text" data-aos="fade-up" data-aos-delay="700">While Vision Mentors Academy is not formally accredited, these achievements reflect our students' success in competitions and their academic journeys with our support.</p>
+                <label for="last-name">Last name</label>
+                <input type="text" id="last-name" name="last-name" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" required>
+
+                <label for="address">Address</label>
+                <input type="text" id="address" name="address">
+
+                <label>
+                    <input type="checkbox" name="subscribe" id="subscribe">
+                    Yes, subscribe me to your newsletter.
+                </label>
+
+                <label for="level">Level</label>
+                <select id="level" name="level">
+                    <option value="2-4th">2-4th</option>
+                    <option value="4-6th">4-6th</option>
+                    <option value="Adv 4-6th">Adv 4-6th</option>
+                    <option value="7-9th">7-9th</option>
+                    <option value="Adv 7-9th">Adv 7-9th</option>
+                </select>
+
+                <button type="submit">Submit</button>
+            </form>
+            <!-- Success Message -->
+            <div id="successMessage" style="display:none; margin-top:20px;">
+                <h2>Thanks!</h2>
+                <p>Your form was submitted successfully.</p>
+            </div>
         </div>
     </section>
 
-    <!-- Footer Section -->
+    <!-- Footer Section (Same as history.html) -->
     <footer class="footer">
         <div class="footer-content">
             <div class="menu-section">
@@ -95,9 +129,9 @@
                     <img src="images/logo.png" alt="Vision Mentors" />
                 </a>
                 <h3 class="text-orange">Vinhomes West Point Campus</h3>
-                <p>Vinhomes West Point W1 Shophouse, Do Duc Duc str, Me Tri Ward, Nam Tu Liem District, Hanoi</p>
+                <p>Address: Vinhomes West Point W1 Shophouse, Do Duc Duc str, Me Tri Ward, Nam Tu Liem District, Hanoi</p>
                 <h3 class="text-orange">Sunshine City - Ciputra Campus</h3>
-                <p>Shophouse A26, Sunshine City, Nam Thang Long Urban Area, Dong Ngac Ward, Bac Tu Liem District, Hanoi</p>
+                <p>Address: Shophouse A26, Sunshine City, Nam Thang Long Urban Area, Dong Ngac Ward, Bac Tu Liem District, Hanoi</p>
                 <p><strong>Phone: (+84) 349 279 356</strong></p>
             </div>
         </div>
@@ -118,13 +152,42 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({
-            duration: 1000, // The duration of the animation in milliseconds
-            once: false, // Animation will happen every time the section is scrolled into view
-            offset: 120, // Offset from the top before animation starts
+            duration: 1000,  // Animation duration in milliseconds
+            once: false,     // Animations will happen every time the section is scrolled into view
+            offset: 120,     // Offset from the top before animation starts
+        });
+    </script>
+
+    <!-- Chat JS Script -->
+    <script src="chat.js"></script>
+    <!-- JavaScript for Formspree -->
+    <script>
+        document.getElementById('enquiryForm').addEventListener('submit', async function(event) {
+            event.preventDefault(); // Prevent the default form submission behavior
+
+            // Get the form data
+            const formData = new FormData(this);
+
+            // Send the form data to Formspree
+            const response = await fetch('https://formspree.io/f/xrbgzogr', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            // If the form submission is successful
+            if (response.ok) {
+                // Hide the form and show the success message
+                document.getElementById('enquiryForm').style.display = 'none';
+                document.getElementById('successMessage').style.display = 'block';
+            } else {
+                alert('There was an issue submitting the form. Please try again.');
+            }
         });
     </script>
     <script src="newsletter.js"></script>
 
 </body>
-
 </html>

@@ -1,18 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Individual Student Achievements</title>
+    <title>Fun Class | Vision Mentors</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="icon" href="images/favicon.png" type="image/x-icon">
 </head>
+<body class="kaizena-english-body">
 
-<body class="achievements-page">
-
-    <!-- Navbar -->
+    <!-- Navbar (Same as history.html) -->
     <nav class="navbar">
         <div class="logo">
             <a href="index.html">
@@ -44,24 +42,54 @@
         </ul>
     </nav>
 
-    <!-- Student Achievements Section -->
-    <section class="student-achievements" data-aos="fade-in">
+    <section class="kaizena-section" data-aos="fade-in">
         <div class="container">
-            <h1 class="section-title" data-aos="zoom-in">Individual <span class="highlight">Student Achievements</span></h1>
-            <p class="intro-text" data-aos="fade-up" data-aos-delay="200">Our academy takes immense pride in the remarkable achievements of our students, demonstrating their dedication to academic excellence and personal growth:</p>
+            <h1 class="section-title" data-aos="zoom-in">Primary Programs: <span class="highlight">Kaizena English Program</span></h1>
+            <p class="intro-text" data-aos="fade-up">
+                Experience a comprehensive English language education at Vision Mentors Academy. Master English confidently through our Kaizena English Program, consisting of four essential components.
+            </p>
 
-            <ul class="achievement-list">
-                <li data-aos="fade-right" data-aos-delay="300"><strong>David Hoang:</strong> David's journey began in January 2023, excelling in essay writing and achieving a 1950 SSAT score, an IELTS score of 7.5, and a 3rd place win in the Spelling Bee competition.</li>
-                <li data-aos="fade-right" data-aos-delay="400"><strong>Phuong Y:</strong> Phuong scored an impressive SAT score of 1540 out of 1600, exemplifying academic excellence.</li>
-                <li data-aos="fade-right" data-aos-delay="500"><strong>Nhu:</strong> Another top achiever, Nhu scored 1570 out of 1600 on the SAT, a testament to rigorous test preparation and guidance from Vision Mentors.</li>
-                <li data-aos="fade-right" data-aos-delay="600"><strong>Minh Giap:</strong> Minh improved from a 104 to a 110 standardized test score with Vision Mentors' support, representing our commitment to helping students overcome challenges.</li>
+            <ul class="kaizena-program-list">
+                <li data-aos="fade-right" data-aos-delay="300">
+                    <strong>1. Vocabulary:</strong> Wordly Wise Series
+                    <p>Structured curriculum for word and phrase expansion. Precision and depth in expression.</p>
+                </li>
+                <li data-aos="fade-right" data-aos-delay="400">
+                    <strong>2. Reading:</strong> Academic Reading Series
+                    <p>Diverse reading materials for comprehension and critical thinking. Discover new perspectives, cultures, and ideas.</p>
+                </li>
+                <li data-aos="fade-right" data-aos-delay="500">
+                    <strong>3. Writing:</strong> Golden Writing Touch Program
+                    <p>Hone writing skills for effective communication. Encourage creativity, critical thinking, and persuasive writing.</p>
+                </li>
+                <li data-aos="fade-right" data-aos-delay="600">
+                    <strong>4. Grammar (Optional):</strong> TOEFL Grammar Series
+                    <p>Navigate English grammar intricacies for clarity and accuracy.</p>
+                </li>
             </ul>
 
-            <p class="closing-text" data-aos="fade-up" data-aos-delay="700">While Vision Mentors Academy is not formally accredited, these achievements reflect our students' success in competitions and their academic journeys with our support.</p>
+            <!-- Kaizena Advantage Section -->
+            <h3 class="kaizena-advantage-title" data-aos="zoom-in">The Kaizena Advantage</h3>
+            <ul class="kaizena-advantage-list">
+                <li data-aos="fade-right" data-aos-delay="300"><strong>Personalized Learning:</strong> Tailored to individual needs and goals.</li>
+                <li data-aos="fade-right" data-aos-delay="400"><strong>Interactive Engagement:</strong> Actively participate in the learning process.</li>
+                <li data-aos="fade-right" data-aos-delay="500"><strong>Mentorship and Feedback:</strong> Experienced mentors provide guidance and support.</li>
+                <li data-aos="fade-right" data-aos-delay="600"><strong>Global Perspective:</strong> Emphasize cross-cultural understanding.</li>
+                <li data-aos="fade-right" data-aos-delay="700"><strong>Lifelong Learning:</strong> Instill a love for lifelong learning.</li>
+            </ul>
+
+            <p class="closing-text" data-aos="fade-up" data-aos-delay="800">
+                Join the transformative Kaizena English Program at Vision Mentors Academy. Explore endless opportunities and connections through the power of language in our interconnected world.
+            </p>
+        </div>
+
+        <!-- Animation Image -->
+        <div class="kaizena-image" data-aos="fade-left" data-aos-delay="500">
+            <img src="images/notepad.png" alt="Kaizena Program Image" class="animated-bounce">
         </div>
     </section>
 
-    <!-- Footer Section -->
+    <!-- Footer Section (Same as history.html) -->
     <footer class="footer">
         <div class="footer-content">
             <div class="menu-section">
@@ -95,9 +123,9 @@
                     <img src="images/logo.png" alt="Vision Mentors" />
                 </a>
                 <h3 class="text-orange">Vinhomes West Point Campus</h3>
-                <p>Vinhomes West Point W1 Shophouse, Do Duc Duc str, Me Tri Ward, Nam Tu Liem District, Hanoi</p>
+                <p>Address: Vinhomes West Point W1 Shophouse, Do Duc Duc str, Me Tri Ward, Nam Tu Liem District, Hanoi</p>
                 <h3 class="text-orange">Sunshine City - Ciputra Campus</h3>
-                <p>Shophouse A26, Sunshine City, Nam Thang Long Urban Area, Dong Ngac Ward, Bac Tu Liem District, Hanoi</p>
+                <p>Address: Shophouse A26, Sunshine City, Nam Thang Long Urban Area, Dong Ngac Ward, Bac Tu Liem District, Hanoi</p>
                 <p><strong>Phone: (+84) 349 279 356</strong></p>
             </div>
         </div>
@@ -118,13 +146,15 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({
-            duration: 1000, // The duration of the animation in milliseconds
-            once: false, // Animation will happen every time the section is scrolled into view
-            offset: 120, // Offset from the top before animation starts
+            duration: 1000,  // Animation duration in milliseconds
+            once: false,     // Animations will happen every time the section is scrolled into view
+            offset: 120,     // Offset from the top before animation starts
         });
     </script>
+
+    <!-- Chat JS Script -->
+    <script src="chat.js"></script>
     <script src="newsletter.js"></script>
 
 </body>
-
 </html>
