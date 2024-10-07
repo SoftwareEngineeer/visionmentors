@@ -98,6 +98,159 @@ body, html {
 .hero-content {
     position: relative;
     z-index: 2;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    margin: 0;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    color: #ffcc00;
+    margin-top: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* Slide Up and Fade In Animation for Hero Content */
+@keyframes slideUpFade {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Staggered animation for multiple elements inside .hero-content */
+.hero-content h1 {
+    opacity: 0;
+    animation: fadeInStagger 1s ease-out 0.5s forwards;
+}
+
+.hero-content p {
+    opacity: 0;
+    animation: fadeInStagger 1s ease-out 0.8s forwards;
+}
+
+@keyframes fadeInStagger {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* First kid - moves from the left to the center and disappears */
+.kid-first {
+    position: absolute;
+    left: -150px; /* Start off-screen from the left corner */
+    top: 60%; /* Adjust vertical position */
+    width: 200px; /* Adjust size */
+    height: auto;
+    background-image: url('images/kid.png'); /* Replace with actual first kid image */
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 3;
+    animation: kidMoveIn 5s ease-in-out forwards; /* First kid's animation */
+}
+
+/* Second kid with trophy - appears from center, moves slightly to the right, and stays */
+.kid-trophy {
+    position: absolute;
+    left: 50%; /* Start from the center */
+    top: 60%;
+    width: 200px; /* Adjust size */
+    height: auto;
+    background-image: url('images/kid_with_trophy.png'); /* Replace with actual trophy kid image */
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0; /* Initially hidden */
+    animation: kidAppearAndMove 5s ease-in-out 5s forwards; /* Trophy kid's animation starts after a delay */
+}
+
+/* Animation for the first kid - moves from left to center and disappears */
+@keyframes kidMoveIn {
+    0% {
+        left: -150px; /* Start off-screen */
+        opacity: 0;
+    }
+    50% {
+        left: 40%; /* Move to the center */
+        opacity: 1;
+    }
+    100% {
+        left: 40%; /* Stays at the center and then disappears */
+        opacity: 0;
+    }
+}
+
+/* Animation for the second kid with trophy - appears from center, moves slightly to the right, and stays */
+@keyframes kidAppearAndMove {
+    0% {
+        opacity: 0;
+        left: 50%; /* Start at the center */
+    }
+    40% {
+        opacity: 1;
+        left: 50%; /* Fully visible at the center */
+    }
+    100% {
+        left: 70%; /* Move to the right and stay */
+        opacity: 1;
+    }
+}
+/* Hero Section */
+/* Hero Section with Parallax and Background Zoom Animation */
+.hero {
+    height: 600px;
+    background: url('images/hero-image.webp') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed; /* Parallax Effect */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    margin: 0 auto;
+    animation: zoomBackground 15s ease-in-out infinite; /* Adding zoom animation */
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+    z-index: 1;
+}
+
+/* Background Zoom Animation */
+@keyframes zoomBackground {
+    0% {
+        background-size: 100%; /* Initial size */
+    }
+    50% {
+        background-size: 110%; /* Zoomed in */
+    }
+    100% {
+        background-size: 100%; /* Back to initial size */
+    }
+}
+
+/* Hero Content */
+.hero-content {
+    position: relative;
+    z-index: 2;
     opacity: 0;
     transform: translateY(30px);
     animation: slideUpFade 1.5s ease-out forwards;
@@ -150,8 +303,6 @@ body, html {
         transform: translateY(0);
     }
 }
-
-
 
 /* Motivate Section */
 /* Motivate and Elevate Section */
@@ -473,12 +624,12 @@ body, html {
     text-decoration: none;
 }
 
-/* Dropdown Styling */
+
 /* Dropdown Styling */
 .dropdown-menu {
     display: none;
     position: absolute;
-    background-color: rgb(103, 98, 98);
+    background-color: rgb(0, 0, 0);
     top: 100%;
     left: 0;
     padding: 10px 0;
@@ -495,7 +646,7 @@ body, html {
 }
 
 .dropdown-menu a {
-    color: #333;
+    color: #ffffff;
     padding: 15px 20px; /* Add more padding inside each dropdown link */
     display: block;
     font-size: 1rem;
@@ -719,7 +870,7 @@ li {
 
 /* About Us Page Scoped Styling */
 .about-page .about-us {
-    background-color: #111; /* Dark background */
+    background-color: #111;
     color: #f1f1f1;
     padding: 20px 20px;
 }
@@ -739,7 +890,7 @@ li {
 }
 
 .about-page .section-title .highlight {
-    color: #ff6600; /* Orange */
+    color: #ff6600;
 }
 
 .about-page .intro-text {
@@ -763,10 +914,6 @@ li {
     margin-bottom: 20px;
 }
 
-.about-page .milestone-title .highlight {
-    color: #ff6600;
-}
-
 .about-page ul {
     list-style-type: disc;
     margin-left: 30px;
@@ -778,7 +925,96 @@ li {
     line-height: 1.8;
     color: #ddd;
 }
+
+/* Specifically targets the footer inside the about-page */
 .about-page .footer ul {
     list-style: none !important; /* Ensure footer ul does not get bullets */
+    padding-left: 0; /* Reset padding */
+    margin-left: 0; /* Reset margin */
 }
+/* Fix the heading display issue */
+.about-page h2.milestone-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ff6600; /* Orange color for milestone headings */
+    margin-top: 40px;
+    margin-bottom: 20px;
+    display: block; /* Ensure the heading is displayed */
+}
+
+.about-page h1.section-title {
+    font-size: 3.5rem;
+    font-weight: bold;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+.about-page .section-title .highlight {
+    color: #ff6600; /* Orange highlight */
+}
+
+/* Ensure headings are not hidden by animation */
+.about-page .milestone-title {
+    opacity: 1 !important; /* Override any hidden state */
+    transform: none !important; /* Prevent shifting off-screen */
+}
+
+.achievements-page .student-achievements {
+    background-color: #111; /* Dark background */
+    color: #f1f1f1;
+    padding: 40px 20px;
+}
+
+.achievements-page .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.achievements-page .section-title {
+    text-align: center;
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #f1f1f1;
+    margin-bottom: 30px;
+}
+
+.achievements-page .section-title .highlight {
+    color: #ff6600; /* Orange */
+}
+
+.achievements-page .intro-text {
+    text-align: center;
+    font-size: 1.5rem;
+    line-height: 1.8;
+    margin-bottom: 50px;
+    color: #ccc;
+}
+
+.achievements-page .achievement-block {
+    margin-bottom: 40px;
+}
+
+.achievements-page .achievement-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ff6600;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.achievements-page ul {
+    list-style-type: disc;
+    margin-left: 30px;
+}
+
+.achievements-page ul li {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #ddd;
+}
+
+
 

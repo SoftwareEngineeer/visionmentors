@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vision Mentors</title>
+    <title>Vision Mentors - Homepage</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="icon" href="images/favicon.png" type="image/x-icon">
 </head>
-<body>
+<body class="homepage">
 
     <!-- Navbar -->
-    <nav class="navbar">
+    <nav class="navbar" data-aos="fade-down">
         <div class="logo">
             <a href="index.html">
                 <img src="images/logo.png" alt="Vision Mentors" />
@@ -23,7 +23,7 @@
                 <a href="#">About Us</a>
                 <ul class="dropdown-menu">
                     <li><a href="history.html">History of Vision Mentors</a></li>
-                    <li><a href="achievement.html">Individual Student Achievements</a></li>
+                    <li><a href="achievements.html">Individual Student Achievements</a></li>
                 </ul>
             </li>
             <li><a href="#">Programs</a></li>
@@ -36,76 +36,24 @@
     <!-- Hero Section with Animation -->
     <section class="hero">
         <div class="hero-content">
-            <!-- Kid Images for Animation -->
-            <img src="images/kid.png" alt="Kid" class="kid-first">
-            <img src="images/kid_with_trophy.png" alt="Kid with Trophy" class="kid-trophy">
+            <img src="images/hero-background.jpg" class="background-image" alt="Hero Image"> <!-- Your existing background image -->
+
+            <!-- Animated Kids -->
+            <div class="kid-first"></div>  <!-- Kid image coming in -->
+            <div class="kid-trophy"></div> <!-- Kid with trophy coming in -->
         </div>
     </section>
-<!-- Motivate and Elevate Section -->
-<section class="motivate-section" data-aos="fade-up">
-    <h2 data-aos="fade-up"><span>MOTIVATE</span> AND <span>ELEVATE</span></h2>
-    <p data-aos="fade-up">
-        Empowering minds, igniting passions. At Vision Mentors, our mission is to cultivate a dynamic educational environment where curiosity thrives. VM is committed to unlocking individual potential, guiding students to discover their passions, and nurturing these interests into skills that transcend classrooms. By fostering a love for learning, VM aspires to equip students with the tools they need not just to meet academic goals, but to surpass them. Through personalized guidance and innovative teaching methods, VM aims to be the catalyst for a lifelong journey of exploration, growth, and the pursuit of excellence. Together, let's elevate aspirations and redefine success.
-    </p>
-    <a href="#" class="btn" data-aos="fade-up" data-aos-delay="200">ABOUT US</a>
-    
-    <!-- Icon Images Around the Section -->
-    <img src="images/icon-calculator.png" class="icon icon-1" alt="Calculator Icon" data-aos="fade-up">
-    <img src="images/icon-bulb.png" class="icon icon-2" alt="Lightbulb Icon" data-aos="fade-up">
-    <img src="images/icon-pen.png" class="icon icon-3" alt="Pen Icon" data-aos="fade-up">
-    <img src="images/icon-pencil.png" class="icon icon-4" alt="Pencil Icon" data-aos="fade-up">
-</section>
 
+    <!-- Other homepage content -->
+    <!-- Add your existing content here -->
 
-
-    <!-- Programs Section with Background Image -->
-    <!-- Programs Section with Background Image -->
-<section class="programs-wrapper" data-aos="zoom-in">
-    <div class="programs" data-aos="fade-up" data-aos-delay="300">
-        <a href="#" class="more-info-btn">More Information</a> <!-- No animation on this button -->
-    </div>
-</section>
-
-
-
-    <!-- Success Rate Section -->
-    <section class="success-rate-section" data-aos="fade-up">
-        <h1 class="success-title" data-aos="fade-up">SUCCESS <span>RATE</span></h1>
-      
-        <div class="success-metrics" data-aos="fade-up">
-          <div class="metric-box" data-aos="fade-up" data-aos-delay="200">
-            <h3>95%</h3>
-            <p>Admissions Rate</p>
-            <p>VM students gain acceptance to their top 3 target universities</p>
-          </div>
-          <div class="metric-box" data-aos="fade-up" data-aos-delay="400">
-            <h3>1000+</h3>
-            <p>Students</p>
-            <p>Scored SAT 1540+, ACT 34+, TOEFL 115+, and IELTS 8.5+</p>
-          </div>
-          <div class="metric-box" data-aos="fade-up" data-aos-delay="600">
-            <h3>300+</h3>
-            <p>Students</p>
-            <p>Award winners of academic competitions</p>
-          </div>
-        </div>
-      
-        <div class="igcse-details" data-aos="fade-up" data-aos-delay="800">
-          <p>IGCSE, IB, AP, A-Levels - Our students are in the top tier in their schools for academic excellence.</p>
-        </div>
-      
-        <div class="cta-button" data-aos="fade-up" data-aos-delay="500">
-          <a href="#">More information</a>
-        </div>
-    </section>
-  
     <!-- Footer Section -->
     <footer class="footer">
         <div class="footer-content">
             <div class="menu-section">
                 <h3>Menu</h3>
                 <ul>
-                    <li><a href="#about">About Us</a></li>
+                    <li><a href="history.html">About Us</a></li>
                     <li><a href="#programs">Programs</a></li>
                     <li><a href="#enquire">Enquire Now</a></li>
                     <li><a href="#faq">FAQ</a></li>
@@ -133,9 +81,9 @@
                     <img src="images/logo.png" alt="Vision Mentors" />
                 </a>
                 <h3 class="text-orange">Vinhomes West Point Campus</h3>
-                <p>Address: Vinhomes West Point W1 Shophouse, Do Duc Duc str, Me Tri Ward, Nam Tu Liem District, Hanoi</p>
+                <p>Vinhomes West Point W1 Shophouse, Do Duc Duc str, Me Tri Ward, Nam Tu Liem District, Hanoi</p>
                 <h3 class="text-orange">Sunshine City - Ciputra Campus</h3>
-                <p>Address: Shophouse A26, Sunshine City, Nam Thang Long Urban Area, Dong Ngac Ward, Bac Tu Liem District, Hanoi</p>
+                <p>Shophouse A26, Sunshine City, Nam Thang Long Urban Area, Dong Ngac Ward, Bac Tu Liem District, Hanoi</p>
                 <p><strong>Phone: (+84) 349 279 356</strong></p>
             </div>
         </div>
@@ -167,14 +115,14 @@
     </div>
 
     <!-- AOS Animation Script -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  AOS.init({
-    duration: 1000,  // The duration of the animation in milliseconds
-    once: false,     // Animation will happen every time the section is scrolled into view
-    offset: 120,     // Offset from the top before animation starts
-  });
-</script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+    AOS.init({
+        duration: 1200,  // Animation duration in milliseconds
+        once: false,     // Allows animations to trigger every time the section is scrolled into view
+        offset: 100,     // Offset from the top before animation starts
+    });
+    </script>
 
     <!-- Chat JS Script -->
     <script src="chat.js"></script>
